@@ -1,0 +1,32 @@
+<table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">Numero_Vuelta</th>
+      <th scope="col">Placa</th>
+      <th scope="col">Cod_Ruta</th>
+      <th scope="col">Num_Pasaje</th>
+      <th scope="col">Fecha_Viaje</th>
+      <th scope="col">Codi_Conductor</th>
+      <th scope="col">Precio_Pasaje</th>
+      <th> Acciones</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let viaje of viajes">
+      <td>{{viaje.vi_numevuelta}}</td>
+      <td> {{viaje.buses.bu_placa}} </td>
+      <td> {{viaje.rutas.ru_codiruta}} </td>
+      <td> {{viaje.vi_numePasajero}} </td>
+      <td> {{viaje.vi_fechViaje}} </td>
+      <td> {{viaje.conductores.co_nombconduc}} </td>
+      <td> {{viaje.rutas.ru_valopasaj}} </td>
+      <button type="button" class="btn btn-primary">Editar</button>
+      <button (click)="deleteViaje(viaje.vi_numevuelta!)" type="button" class="btn btn-secondary">Eliminar</button>
+      <button type="button" class="btn btn-success">Agregar</button>
+
+    </tr>
+
+  </tbody>
+</table>
